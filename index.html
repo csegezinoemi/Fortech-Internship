@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Castle Black</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<script type="text/javascript" src="myScript.js"></script>
+</head>
+<body>
+	<div class="top">
+	  <div class="bar">
+	    <a href="#home" class="leftBar"><b>Black</b>Castle</a>
+	    <div class="rightBar">
+		    <ul class="topnav">
+		      <li><a href="#status" class="menuitem">Status</a></li>
+		      <li><a href="#developers" class="menuitem">Developers</a></li>
+		      <li><a href="#projects" class="menuitem">Projects</a></li>
+		    </ul>
+	    </div>
+	  </div>
+	</div>
+
+	<header class="headerContainer" style="max-width:1500px;" id="home">
+	  <img class="headerImage" src="castle.jpg" width="1500" height="800">
+	</header>
+
+	<div id="projects" style="max-width:1564px;height: auto;">
+		<h3>Projects</h3>
+		<div class="projectContainer" style="float: left;width: 33%;"">
+			<h4>Add a new project</h4>
+			<form name="fname">
+				<label>Project name:</label><input type="text" name="projectName" class="input">
+				<input type="button" value="Add" onclick="addProject()" class="buttons">
+				<p id="d"></p>
+			</form>
+			
+		</div>
+
+		<div class="projectContainer" style="float: left;width: 33%;">
+			<h4>Show existing projects</h4>
+			<input type="button" value="Show in console" onclick="showProjectList()" class="buttons">
+			<p id="n"></p>
+		</div>
+	
+		<div class="projectContainer" style="float: left;width: 33%;">	
+			<form name="f">
+				<h4>Remove projects</h4>
+				<label>Project name:</label>
+				<input type="text" name="projectId" class="input">
+				<input type = "button" value = "Remove" onclick="removeProject()" class="buttons">
+				<p id="dm"></p>
+			</form>
+		</div>
+	</div>
+	<!-- developer-->
+	<div id="developers" style="margin-top:100px;">
+		<h3>Developers</h3>
+		<div class="developerContainer" style="float: left;width: 33%;">
+			<h4>Add a new developer</h4>
+			<form name="devForm">
+				<label>Developer:</label><input type="text" name="developerName" class="input">
+				<input type="button" value="Add" onclick="addDeveloper()" class="buttons">
+				<p id="dev"></p>
+			</form>	
+		</div>
+
+		<div class="developerContainer" style="float: left;width: 33%;">
+			<h4>Show developer names</h4>
+			<input type="button" value="Show in console" onclick="showDeveloperList()" class="buttons">
+			<p id="devName"></p>
+		</div>
+	
+		<div class="developerContainer" style="float: left;width: 33%;">	
+			<form name="formRemove">
+				<h4>Remove developers</h4>
+				<label>Developer name:</label>
+				<input type="text" name="developerName" class="input">
+				<input type = "button" value = "Remove" onclick="removeDeveloper()" class="buttons">
+				<p id="remove"></p>
+			</form>
+		</div>
+	</div>
+		<!-- status-->
+	<div id="status" style="margin-top:100px;">
+		<h3>Status</h3>
+		<div class="statusContainer" style="float: left;width: 33%;">
+			<h4>Add a new status</h4>
+			<form name="statusForm">
+				<table>
+					<tr><td><label>Status ID:</label></td><td><input type="number" name="statusID" class="input"></td></tr>
+					<tr><td><label>Developer ID:</label></td><td><input type="number" name="devID" class="input"></td></tr>
+					<tr><td><label>Project ID:</label></td><td><input type="number" name="projectID" class="input"></td></tr>
+					<tr><td><label>Status:</label></td><td><input type="text" name="inputstat" class="input" maxlength="250"></td></tr>
+					<tr><td><input type="button" value="Add status" onclick="createStatus()" class="buttons"></td></tr>
+				</table>
+				<p id="forstatus"></p>
+			</form>	
+		</div>
+
+		<div class="statusContainer" style="float: left;width: 33%;">
+			<h4>Modify status</h4>
+			<form name="modifyst">
+			<table>
+				<tr><td><label>Status id:</label></td><td><input type="number" name="stid"></td></tr>
+				<tr><td><label>New status:</label></td><td><input type="text" name="newStatus" maxlength="250"></td></tr>
+				<tr><td><input type="button" value="Show in console" onclick="modifyStatus()" class="buttons"></td></tr>
+			</table>
+			</form>
+			<p id="mod"></p>
+		</div>
+	
+		<div class="statusContainer" style="float: left;width: 33%;">	
+			<form name="removeStatus">
+				<h4>Remove status</h4>
+				<label>Status ID:</label>
+				<input type="text" name="idOfStatus" class="input">
+				<input type = "button" value = "Remove" onclick="deleteFromListStatus()" class="buttons">
+				<p id="rm"></p>
+			</form>
+		</div>
+	</div>
+	<div>
+		<input type = "button" value = "Status Summary" onclick="dayStatusSummary()" class="buttons">
+		<p id="summary"></p>
+	</div>
+
+	<footer></footer>
+	
+</body>
+</html>
